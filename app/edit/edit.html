@@ -1,0 +1,96 @@
+<form  name="profileForm" ng-submit="profileForm.$valid && methodName" class="form-horizontal" novalidate>
+    <div ng-class="{'has-error' : profileForm.role.$error.required}" class="form-group has-feedback"> <!--"has-success" / "has-warning" / "has-error"-->
+        <label class="col-xs-2 control-label">Role</label>
+        <div class="col-xs-4">
+            <input name="role" required ng-clas="active " ng-model="profile.role" type="text" class="form-control" placeholder="e.g. Full stack developer">
+            <span ng-show="profileForm.role.$error.required" class="glyphicon glyphicon-warning-sign form-control-feedback"></span>
+            <span ng-show="profileForm.role.$error.required" class="help-block">Role is required</span>
+        </div>
+    </div>
+    <div ng-class="{'has-error' : profileForm.firstName.$error.required}" class="form-group has-feedback">
+        <label class="col-xs-2 control-label" >First Name</label>
+        <div class="col-xs-4">
+            <input name="firstName" required ng-model="profile.firstName" type="text" class="form-control" placeholder="e.g. Tonino"/>
+            <span ng-show="profileForm.firstName.$error.required" class="glyphicon glyphicon-warning-sign form-control-feedback"></span>
+            <span ng-show="profileForm.firstName.$error.required" class="help-block">First name is required</span>
+        </div>
+    </div>
+    <div ng-class="{'has-error' : profileForm.lastName.$error.required}" class="form-group has-feedback">
+        <label class="col-xs-2 control-label" >Last Name</label>
+        <div class="col-xs-4">
+            <input name="lastName" required ng-model="profile.lastName" type="text" class="form-control" placeholder="e.g Catapano"/>
+            <span ng-show="profileForm.lastName.$error.required" class="glyphicon glyphicon-warning-sign form-control-feedback"></span>
+            <span ng-show="profileForm.lastName.$error.required" class="help-block">Last name is required</span>
+        </div>
+    </div>
+    <div class="form-group has-feedback">
+        <label class="control-label col-xs-2">Gender:</label>
+        <div class="col-xs-3">
+            <label class="radio-inline">
+                <input ng-model="profile.gender" type="radio" name="genderRadios" value="male" /> Male
+            </label>
+        </div>
+        <div class="col-xs-3">
+            <label class="radio-inline">
+                <input ng-model="profile.gender" type="radio" name="genderRadios" value="female" /> Female
+            </label>
+        </div>
+    </div>
+
+    <div class="form-group has-feedback">
+        <label class="col-xs-2 control-label">Date of Birth</label>
+        <div class="col-xs-4">
+            <input min="1950-01-01" max="2000-01-01" ng-model="profile.birthDate" type="date" class="form-control" placeholder=" dd/MM/yyyy">
+            <!--<span class="glyphicon glyphicon-warning-sign form-control-feedback"></span>-->
+            <!--<span class="help-block">Strange chars are not allowed</span>-->
+        </div>
+
+        <label class="col-xs-2 control-label">Nationality</label>
+        <div class="col-xs-4">
+            <input ng-model="profile.nationality" type="text" class="form-control" placeholder="e.g. Italian">
+            <!--<span class="glyphicon glyphicon-remove form-control-feedback"></span>-->
+            <!--<span class="help-block">Please enter a valid email address</span>-->
+        </div>
+    </div>
+
+    <div ng-class="{'has-error' : !profileForm.email.$valid}" class="form-group has-feedback">
+        <label class="col-xs-2 control-label">Email</label>
+        <div class="col-xs-4">
+            <input required name="email" ng-pattern="config.emailFormat" ng-model="profile.email" type="text" class="form-control" placeholder="e.g. yourname@yourdomain.com">
+            <span ng-hide="profileForm.email.$valid" class="glyphicon glyphicon-warning-sign form-control-feedback"></span>
+            <span ng-hide="profileForm.email.$valid" class="help-block">Please use a valid email</span>
+        </div>
+
+        <label class="col-xs-2 control-label">Phone nr</label>
+        <div class="col-xs-4">
+            <input ng-model="profile.phone" type="text" class="form-control" placeholder="e.g. +31 061656987">
+            <!--<span class="glyphicon glyphicon-remove form-control-feedback"></span>-->
+            <!--<span class="help-block">Please enter a valid email address</span>-->
+        </div>
+    </div>
+
+    <div class="form-group has-feedback">
+        <label class="col-xs-2 control-label">website</label>
+        <div class="col-xs-4">
+            <input ng-model="profile.website" type="url" class="form-control" placeholder="e.g. http://toninocatapano.com">
+            <!--<span class="glyphicon glyphicon-warning-sign form-control-feedback"></span>-->
+            <!--<span class="help-block">Strange chars are not allowed</span>-->
+        </div>
+
+        <label class="col-xs-2 control-label">Linkedin profile</label>
+        <div class="col-xs-4">
+            <input ng-model="profile.linkedin" type="url" class="form-control" placeholder="e.g. http://linkedin.com/ciabellcia">
+            <!--<span class="glyphicon glyphicon-remove form-control-feedback"></span>-->
+            <!--<span class="help-block">Please enter a valid email address</span>-->
+        </div>
+    </div>
+
+    <div class="form-group has-feedback">
+        <label class="col-xs-3 control-label">Short Description</label>
+        <div class="col-xs-12">
+            <textarea ng-model="profile.description" class="form-control" placeholder="A small description about you" rows="5"></textarea>
+            <!--<span class="glyphicon glyphicon-warning-sign form-control-feedback"></span>-->
+            <!--<span class="help-block">Strange chars are not allowed</span>-->
+        </div>
+    </div>
+</form>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="formangular">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="Resumator test in angularjs">
+    <meta name="author" content="Tonino Catapano">
+    <title>Resumator Angularjs</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap-switch.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.0/angular.js"></script>
+    <script src="assets/js/bootstrap-switch.min.js"></script>
+    <link rel="stylesheet" href="assets/css/app.css">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="assets/css/jumbotron-narrow.css" rel="stylesheet">
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="app.js"></script>
+    <script src="edit/edit.js"></script>
+    <script src="view/view.js"></script>
+
+
+</head>
+<body ng-controller="MainCtrl" >
+    <div class="container">
+        <div class="header clearfix">
+            <nav>
+                <ul class="nav nav-pills pull-right">
+                    <li role="presentation" class="active"><a href="#">Home</a></li>
+                    <li role="presentation"><a href="#">About</a></li>
+                    <li role="presentation"><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <h3 class="text-muted">Resumator Angular</h3>
+        </div>
+
+        <div class="jumbotron">
+            <h1>This looks fabulous!</h1>
+            <p class="lead">First test with AngularJS concepts (controllers, modules, directives...) and bootstrap 3</p>
+            <p><a ng-click="loadProfileFromUrl()" class="btn btn-lg btn-success" href="#" role="button">LOAD JSON FROM URL</a></p>
+        </div>
+        <div class="row marketing">
+            <div class="bs-example">
+                <div class="form-group">
+                    <h1>{{getFullnameIfFilled()}} Profile</h1>
+                    <input ng-model="mode" class="inline-block" id="switch" type="checkbox" data-size="large" data-on-text="view" data-off-text="edit" data-off-color="warning">
+                    <br/>
+                </div>
+
+                <div ng-switch on="mode">
+                    <div ng-switch-when="true" ><div ng-include="'view/view.html'"></div></div>
+                    <div ng-switch-when="false" ><div ng-include="'edit/edit.html'"></div></div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p><a href="http://toninocatapano.com">&copy; 2016 Tonino Catapano</a></p>
+        </footer>
+
+    </div> <!-- /container -->
+
+<script>
+    /*setTimeout(function(){$("#switch").bootstrapSwitch();}, 1000);*/
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,13 @@
+.bs-example{
+  margin: 20px;
+}
+
+textarea {
+    resize:vertical;/*will prevent resizing horizontally*/
+}
+.inline-block{
+    display: inline-block;
+    height:20px;
+    width:20px;
+    margin-right: 120px;
+}
