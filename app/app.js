@@ -24,7 +24,7 @@ angular.module('formangular', [
 
     
     var config = {
-        emailFormat : /^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/
+        emailFormat : null
     };
 
     function getFullnameIfFilled(){
@@ -45,11 +45,23 @@ angular.module('formangular', [
     }
 
 
+    function loadConfFromUrl(){
+        $http({
+            method: 'GET',
+            url: '/app/assets/json/config.json'
+        }).then(function successCallback(response) {
+            $scope.config = response.data;
+        }, function errorCallback(response) {
+            console.error(response);
+        });
+    }
+
+
 
     $scope.mode = mode;
     $scope.profile = profile;
     $scope.config = config;
     $scope.getFullnameIfFilled = getFullnameIfFilled;
-    $scope.loadProfileFromUrl = loadProfileFromUrl;
+    $scope.loadProfileFromUrl = loadConfFromUrl;
 
 }]);
