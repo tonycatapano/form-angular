@@ -7,15 +7,18 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="Resumator test in angularjs">
     <meta name="author" content="Tonino Catapano">
-    <title>Resumator Angularjs</title>
+    <title>Formangular</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="assets/css/bootstrap-switch.min.css">
+    <link rel="stylesheet" href="bower_components/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.0/angular.js"></script>
-    <script src="assets/js/bootstrap-switch.min.js"></script>
+
+    <script src="bower_components/bootstrap-switch/dist/js/bootstrap-switch.js"></script>
+    <script src="bower_components/angular-bootstrap-switch/common/module.js"></script>
+
     <link rel="stylesheet" href="assets/css/app.css">
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
@@ -29,6 +32,9 @@
     <script src="view/view.js"></script>
 
 
+
+
+
 </head>
 <body ng-controller="MainCtrl" >
     <div class="container">
@@ -40,7 +46,7 @@
                     <li role="presentation"><a href="#">Contact</a></li>
                 </ul>
             </nav>
-            <h3 class="text-muted">Resumator Angular</h3>
+            <h3 class="text-muted">FormAngularJs</h3>
         </div>
 
         <div class="jumbotron">
@@ -52,7 +58,16 @@
             <div class="bs-example">
                 <div class="form-group">
                     <h1>{{getFullnameIfFilled()}} Profile</h1>
-                    <input ng-model="mode" class="inline-block" id="switch" type="checkbox" data-size="large" data-on-text="view" data-off-text="edit" data-off-color="warning">
+<!--                    <input ng-model="mode" class="inline-block" id="switch" type="checkbox" data-size="large" data-on-text="view" data-off-text="edit" data-off-color="warning">-->
+                    <input  class="inline-block"
+                            bs-switch
+                            ng-model="mode"
+                            id="switch"
+                            type="checkbox"
+                            switch-size="large"
+                            switch-on-text="view"
+                            switch-off-text="edit"
+                            switch-off-color="warning">
                     <br/>
                 </div>
 
@@ -70,7 +85,6 @@
     </div> <!-- /container -->
 
 <script>
-    /*setTimeout(function(){$("#switch").bootstrapSwitch();}, 1000);*/
 </script>
 </body>
 </html>

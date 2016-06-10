@@ -2,8 +2,9 @@
 
 // Declare app level module which depends on views, and components
 angular.module('formangular', [
-  'myApp.view',
-  'myApp.edit'
+    'frapontillo.bootstrap-switch',
+    'myApp.view',
+    'myApp.edit'
 ]).controller('MainCtrl',['$scope', '$http', function($scope, $http) {
 
     var mode = false;
