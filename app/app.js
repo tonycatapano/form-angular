@@ -36,7 +36,7 @@ angular.module('formangular', [
     function loadProfileFromUrl(){
         $http({
             method: 'GET',
-            url: '/app/assets/json/profile.json'
+            url: 'assets/json/profile.json'
         }).then(function successCallback(response) {
             $scope.profile = response.data;
         }, function errorCallback(response) {
@@ -48,8 +48,10 @@ angular.module('formangular', [
     function loadConfFromUrl(){
         $http({
             method: 'GET',
-            url: '/app/assets/json/config.json'
+            url: 'assets/json/config.json'
         }).then(function successCallback(response) {
+            response.data.emailFormat = new RegExp(response.data.emailFormat);
+            console.log(response.data);
             $scope.config = response.data;
         }, function errorCallback(response) {
             console.error(response);
@@ -57,11 +59,13 @@ angular.module('formangular', [
     }
 
 
+    loadConfFromUrl();
 
     $scope.mode = mode;
     $scope.profile = profile;
     $scope.config = config;
     $scope.getFullnameIfFilled = getFullnameIfFilled;
-    $scope.loadProfileFromUrl = loadConfFromUrl;
+    $scope.loadProfileFromUrl = loadProfileFromUrl;
+    $scope.loadConfFromUrl = loadConfFromUrl;
 
 }]);
