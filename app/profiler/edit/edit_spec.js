@@ -1,3 +1,4 @@
+/*
 'use strict';
 
 describe('myApp.edit module', function() {
@@ -13,4 +14,4 @@ describe('myApp.edit module', function() {
     }));
 
   });
-});
+});*/

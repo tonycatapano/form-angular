@@ -7,10 +7,9 @@ module.exports = function(config) {
     files: [
       'bower_components/angular/angular.js',
       'bower_components/angular-mocks/angular-mocks.js',
-      'edit/**/*.js',
-      'view*/**/*.js',
-      'app.js',
-      'app_spec.js'
+      'profiler/*.js',
+      'profiler/**/*.js'
+      // 'app.js'
     ],
 
     autoWatch: true,
@@ -29,7 +28,8 @@ module.exports = function(config) {
     junitReporter: {
       outputFile: 'test_out/unit.xml',
       suite: 'unit'
-    }
-
+    },
+    logLevel: config.LOG_DEBUG
   });
+
 };

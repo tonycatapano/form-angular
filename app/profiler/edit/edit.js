@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp.edit', [])
+angular.module('app.profiler.edit', [])
 
 .controller('EditCtrl', [function() {
 

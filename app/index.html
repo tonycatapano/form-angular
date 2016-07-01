@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="formangular">
+<html lang="en" ng-app="app">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -27,11 +27,17 @@
         <link href="assets/css/jumbotron-narrow.css" rel="stylesheet">
         <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
         <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+
+
+        <script src="profiler/profiler.module.js"></script>
+        <script src="profiler/profiler.directive.js"></script>
+        <script src="profiler/profiler.service.js"></script>
+
+        <script src="profiler/edit/edit.js"></script>
+        <script src="profiler/view/view.js"></script>
         <script src="app.js"></script>
-        <script src="edit/edit.js"></script>
-        <script src="view/view.js"></script>
     </head>
-    <body ng-controller="MainCtrl" >
+    <body>
         <div class="container">
             <div class="header clearfix">
                 <nav>
@@ -43,26 +49,7 @@
                 </nav>
                 <h3 class="text-muted">FormAngularJs</h3>
             </div>
-            <div class="jumbotron">
-                <h1>This looks fabulous!</h1>
-                <p class="lead">First test with AngularJS concepts (controllers, modules, directives...) and bootstrap 3</p>
-                <p><a ng-click="loadProfileFromUrl()" class="btn btn-lg btn-success" href="#" role="button">LOAD Profile FROM URL</a></p>
-                <p><a ng-click="loadConfFromUrl()" class="btn btn-lg btn-success" href="#" role="button">LOAD Conf FROM URL</a></p>
-            </div>
-            <div class="row marketing">
-                <div class="bs-example">
-                    <div class="form-group">
-                        <h1>{{getFullnameIfFilled()}} Profile</h1>
-                        <input  class="inline-block" bs-switch ng-model="mode" id="switch" type="checkbox"
-                                switch-size="large" switch-on-text="view" switch-off-text="edit" switch-off-color="warning">
-                        <br/>
-                    </div>
-                    <div ng-switch on="mode">
-                        <div ng-switch-when="true" ><div ng-include="'view/view.html'"></div></div>
-                        <div ng-switch-when="false" ><div ng-include="'edit/edit.html'"></div></div>
-                    </div>
-                </div>
-            </div>
+            <profiler></profiler>
             <footer class="footer">
                 <p><a href="http://toninocatapano.com">&copy; 2016 Tonino Catapano</a></p>
             </footer>

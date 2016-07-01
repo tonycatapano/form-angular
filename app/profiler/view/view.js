@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp.view', [])
+angular.module('app.profiler.view', [])
     
 .controller('ViewCtrl', [function() {
 
